@@ -1,0 +1,52 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  scroll-behavior: smooth;
+}
+
+.swiper-button-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.container-overflow {
+  width: 100%;
+  padding-left: 15px;
+  margin-left: auto;
+}
+
+.about-slide:not(.swiper-slide-active) img {
+  @apply rounded-xl;
+}
+
+.about-slide.swiper-slide-active .about-slide-content {
+  @apply visible translate-y-0 opacity-100 transition-all delay-200 duration-500;
+}
+
+.about-slide.swiper-slide-active .about-slide-content .quote-icon {
+  @apply scale-100 transition-all delay-100 duration-500;
+}
+
+@media screen and (min-width: 640px) {
+  .container-overflow {
+    max-width: calc(640px + ((100% - 640px) / 2));
+  }
+
+  @media (min-width: 768px) {
+    .container-overflow {
+      max-width: calc(768px + ((100% - 768px) / 2));
+    }
+  }
+  @media (min-width: 1024px) {
+    .container-overflow {
+      max-width: calc(1024px + ((100% - 1024px) / 2));
+    }
+  }
+  @media (min-width: 1170px) {
+    .container-overflow {
+      max-width: calc(1170px + ((100% - 1170px) / 2));
+    }
+  }
+}
